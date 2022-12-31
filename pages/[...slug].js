@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-
+import Layout from '../components/Layout';
 import {
   useStoryblokState,
   getStoryblokApi,
@@ -11,17 +10,14 @@ export default function Page({ story }) {
   story = useStoryblokState(story);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>{story ? story.name : 'My Site'}</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <header>
-        <h1>{story ? story.name : 'My Site'}</h1>
-      </header>
-
-      <StoryblokComponent blok={story.content} />
+      <Layout>
+        <StoryblokComponent blok={story.content} />
+      </Layout>
     </div>
   );
 }
@@ -50,8 +46,8 @@ export async function getStaticPaths() {
   let { data } = await storyblokApi.get('cdn/links/', {
     version: 'draft',
   });
-
   let paths = [];
+
   Object.keys(data.links).forEach((linkKey) => {
     if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
       return;
@@ -59,7 +55,6 @@ export async function getStaticPaths() {
 
     const slug = data.links[linkKey].slug;
     let splittedSlug = slug.split('/');
-
     paths.push({ params: { slug: splittedSlug } });
   });
 
