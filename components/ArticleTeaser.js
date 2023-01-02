@@ -3,7 +3,7 @@ import { render } from 'storyblok-rich-text-react-renderer';
 import Image from 'next/image';
 
 const ArticleTeaser = ({ article }) => {
-  console.log(article);
+  //  console.log(article);
   return (
     <div className='column feature'>
       <div className='p-6'>

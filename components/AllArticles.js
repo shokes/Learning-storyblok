@@ -12,7 +12,10 @@ const AllArticles = ({ blok }) => {
         `cdn/stories?starts_with=blog/&is_startpage=false`
       );
 
-      //console.log(data);
+      // const { data } = await storyblokApi.get(
+      //   `cdn/stories?starts_with=blog/&is_startpage=false`
+      // );
+      console.log(data);
 
       setArticles((prev) =>
         data.stories.map((article) => {
