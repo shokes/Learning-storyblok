@@ -12,9 +12,6 @@ const AllArticles = ({ blok }) => {
         `cdn/stories?starts_with=blog/&is_startpage=false`
       );
 
-      // const { data } = await storyblokApi.get(
-      //   `cdn/stories?starts_with=blog/&is_startpage=false`
-      // );
       console.log(data);
 
       setArticles((prev) =>

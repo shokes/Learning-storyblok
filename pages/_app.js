@@ -8,7 +8,6 @@ import Teaser from '../components/Teaser';
 import Hero from '../components/Hero';
 import Article from '../components/Article';
 import AllArticles from '../components/AllArticles';
-import ArticleTeaser from '../components/ArticleTeaser';
 
 const components = {
   feature: Feature,

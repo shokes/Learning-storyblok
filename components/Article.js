@@ -7,10 +7,10 @@ const Article = ({ blok }) => {
       <div className='container mx-auto flex px-5 py-24 items-center justify-center flex-col'>
         <Image
           className='  md:h-96 w-full mb-10 object-cover object-center rounded'
-          alt={blok?.image.alt}
-          src={blok?.image.filename}
+          alt={blok.image.alt}
+          src={blok.image.filename}
           width={200}
-          height={200}
+          height={300}
         />
         <div className='text-center lg:w-2/3 w-full'>
           <h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>

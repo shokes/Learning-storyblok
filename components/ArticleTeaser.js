@@ -3,16 +3,15 @@ import { render } from 'storyblok-rich-text-react-renderer';
 import Image from 'next/image';
 
 const ArticleTeaser = ({ article }) => {
-  //  console.log(article);
   return (
     <div className='column feature'>
       <div className='p-6'>
         <Image
+          width={300}
+          height={300}
           className='object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl'
           src={article.image.filename}
           alt='blog'
-          width={200}
-          height={200}
         />
         <h1 className='mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl'>
           {article.title}
